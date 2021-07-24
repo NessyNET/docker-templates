@@ -1,58 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Containers>
-  <TemplateURL>https://raw.githubusercontent.com/NessyNET/docker-templates/main/nessynet/anifeeder-dl.xml</TemplateURL>
-  <Beta>False</Beta>
-  <Category>Tools:</Category>
+<?xml version="1.0"?>
+<Container version="2">
   <Name>anifeeder-dl</Name>
-  <Description>
-    [b]Description[/b][br]
-    One piece of the Anifeeder ecosystem. This is a wrapper for Youtube-DL and exposes a set of RESTful endpoints for Anifeeder to interact with.[br][br]
-    [b]Configuration[/b][br]
-    [b]/download[/b] This is where downloaded files will be stored.[br]
-    [b]Documentation[/b][br]
-    URL TBD[br][br]
-  </Description>
-  <Overview>
-    TBD[br][br]
-  </Overview>
-  <Support></Support>
-  <Registry>https://registry.hub.docker.com/r/nessynet/anifeeder_dl</Registry>
-  <GitHub>https://github.com/NessyNET/anifeeder-dl</GitHub>
-  <Repository>nessynet/anifeeder_dl</Repository>
-  <Project>https://github.com/NessyNET/anifeeder-dl</Project>
-  <BindTime>true</BindTime>
+  <Repository>nessynet/anifeeder_dl:latest</Repository>
+  <Registry>https://hub.docker.com/r/nessynet/anifeeder_dl</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Networking>
-    <Mode>bridge</Mode>
-    <Publish>
-      <Port>
-        <HostPort>5000</HostPort>
-        <ContainerPort>80</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-    </Publish>
-  </Networking>
-  <Environment>
-    <Variable>
-      <Name>UMASK</Name>
-      <Value>000</Value>
-    </Variable>
-    <Variable>
-      <Name>PUID</Name>
-      <Value>99</Value>
-    </Variable>
-    <Variable>
-      <Name>PGID</Name>
-      <Value>100</Value>
-    </Variable>
-  </Environment>
-  <Data>
-    <Volume>
-      <HostDir>/mnt/user/downloads</HostDir>
-      <ContainerDir>/download</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-  </Data>
-  <Icon />
-  <ExtraParams></ExtraParams>
-</Containers>
+  <Support />
+  <Project>https://github.com/NessyNET/docker-templates</Project>
+  <Overview>Anifeeder is</Overview>
+  <Category>Tools:</Category>
+  <WebUI>http://[IP]:[PORT:80]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/NessyNET/docker-templates/main/nessynet/anifeeder-dl.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/A75G/docker-templates/master/templates/icons/leantime.png</Icon>
+  <Description>Anifeeder is</Description>
+  <Config Name="Port" Target="80" Default="5000" Mode="tcp" Description="Port" Type="Port" Display="always" Required="true" Mask="false">5000</Config>
+</Container>
